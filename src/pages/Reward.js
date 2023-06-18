@@ -1,3 +1,5 @@
+import {Link } from 'react-router-dom'
+
 const Reward = () => {
     return (
       <div className="relative bg-whitesmoke-100 w-full h-[1538px] overflow-hidden text-left text-base text-black font-montserrat">
@@ -122,40 +124,45 @@ const Reward = () => {
           src="/qr-img-1@2x.png"
         />
         <nav
-          className="absolute top-[0px] left-[0px] w-[1520px] h-28 overflow-hidden"
-          id="navbar"
-        >
-          <img
-            className="absolute top-[21px] left-[28px] w-20 h-[68.49px] object-cover"
-            alt=""
-            src="/image-3@2x.png"
-          />
-          <div className="absolute top-[40px] left-[115px] text-5xl font-kumbh-sans text-gray-200 text-left flex items-center w-[234px]">
-            HungerZero
-          </div>
-          <div className="absolute top-[44px] left-[984px] text-mini font-poppins text-black text-left flex items-center w-[110px]">
-            Donation
-          </div>
-          <div className="absolute top-[44px] left-[1096px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
-            Community
-          </div>
-          <div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
-            Contact Us
-          </div>
-          <img
-            className="absolute top-[30px] left-[1415px] w-[52px] h-[52px] object-cover"
-            alt=""
-            src="/ellipse1@2x.png"
-          />
-          <div className="absolute top-[44px] left-[892px] text-mini font-poppins text-gray-200 text-left flex items-center w-[55px]">
-            Home
-          </div>
-          <img
-            className="absolute h-[23.15%] w-[1.64%] top-[38.85%] right-[9.34%] bottom-[38%] left-[89.01%] max-w-full overflow-hidden max-h-full"
-            alt=""
-            src="/vector.svg"
-          />
-        </nav>
+        className="absolute top-[0px] left-[0px] w-[1520px] h-28 overflow-hidden"
+        id="navbar"
+      >
+      
+        <img
+          className="absolute top-[21px] left-[28px] w-20 h-[68.49px] object-cover"
+          alt=""
+          src="/image-3@2x.png"
+        />
+        <div className="absolute top-[40px] left-[115px] text-5xl font-kumbh-sans text-gray-200 text-left flex items-center w-[234px]">
+          HungerZero
+        </div>
+      
+      <Link to={"/userhome/donations"}><div className="absolute top-[44px] left-[984px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+          Donation
+        </div></Link>  
+       <Link to={"/userhome/community"}> <div className="absolute top-[44px] left-[1096px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+          Community
+        </div></Link>
+        <Link to={"/userhome/contact"}><div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+          Contact Us
+        </div></Link>
+        <Link to={"/userhome/reward"}><div className="absolute text-seagreen-100 font-bold top-[44px] left-[770px] text-mini font-poppins  text-left flex items-center w-[110px]">
+          Rewards
+        </div></Link>
+        <Link to={"/userhome/userprofile"}  > <img
+          className="absolute top-[30px] left-[1415px] w-[52px] h-[52px] object-cover"
+          alt=""
+          src="/ellipse1@2x.png"
+        /></Link> 
+      <Link to={"/userhome"} ><div className="absolute top-[44px]  left-[892px] text-mini font-poppins text-gray-200 text-left flex items-center w-[55px]">
+          Home
+        </div></Link> 
+    <Link to={"/userhome/notificationuser"}> <img
+          className="absolute h-[23.15%] w-[1.64%] top-[38.85%] right-[9.34%] bottom-[38%] left-[89.01%] max-w-full overflow-hidden max-h-full"
+          alt=""
+          src="/vector.svg"
+        /></Link>   
+      </nav>
         <img
           className="absolute top-[339px] left-[590px] w-[78px] h-[47px] object-cover"
           alt=""

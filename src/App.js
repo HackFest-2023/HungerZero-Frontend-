@@ -89,20 +89,22 @@ function App() {
         
         <Route path={'/userhome/ngoprofileuser'} element={<NGOProfileUser/>}/> 
         <Route path={'/calendar'} element={<Calendar/>}/>
-      <Route path="/userhome/contact" element={<ContactUs />} />
+      
       <Route path="/userhome/community" element={<Community />} />
       <Route path="/userhome/donations" element={<Donations />} />
+      <Route path="/userhome/reward" element={<Reward />} />
       <Route
-       path={'/userprofile'} element={<UserProfile />} />
+       path={'/userhome/userprofile'} element={<UserProfile />} />
       
-         <Route path="/userhome/notificationuser" element={<NotificationUser/>} />
-         <Route path="notificationngo" element={<NotificationNgo/>} />
-          
-      </Route>
+        <Route path="/userhome/notificationuser" element={<NotificationUser/>} />
+        
+        </Route>
 <Route path={'/ngohome'} element={<NgoHome/>}/>
         <Route path={'/ngomaps'} element={<NgoMaps/>}/>
-        <Route path="reward" element={<Reward />} />
+        <Route path="/notificationngo" element={<NotificationNgo/>} />
+        
         <Route path="/nutrition" element={<Nutrition />} />
+        <Route path="/contact" element={<ContactUs />} />
        <Route
         path="/ngohome/feedback" element={<NGOFeedback />} />
     </Routes>

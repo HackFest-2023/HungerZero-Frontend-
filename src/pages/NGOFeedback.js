@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TextField } from "@mui/material";
+import {Link } from 'react-router-dom'
 
 const NGOFeedback = () => {
     const [isStarFilled, setIsStarFilled] = useState(false);
@@ -62,41 +63,41 @@ const NGOFeedback = () => {
         label="Write your feedback"
         margin="none"
       />
-      <nav
-        className="absolute top-[0px] left-[0px] w-[1520px] h-28 overflow-hidden"
-        id="navbar"
-      >
-        <img
-          className="absolute top-[21px] left-[28px] w-20 h-[68.49px] object-cover"
-          alt=""
-          src="/image-3@2x.png"
-        />
-        <div className="absolute top-[40px] left-[115px] text-5xl font-kumbh-sans text-gray-200 text-left flex items-center w-[234px]">
-          HungerZero
-        </div>
-        <div className="absolute top-[44px] left-[1004px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
-         Maps
-        </div>
-        <div className="absolute top-[44px] left-[1096px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px] text-seagreen-100 font-bold">
-          Feedback
-        </div>
-        <div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
-          Contact Us
-        </div>
-        <img
-          className="absolute top-[30px] left-[1415px] w-[52px] h-[52px] object-cover"
-          alt=""
-          src="/NGOprofile.png"
-        />
-        <div className="absolute top-[44px] left-[892px] text-mini font-poppins text-gray-200 text-left flex items-center w-[55px]">
-          Home
-        </div>
-        <img
-          className="absolute h-[23.15%] w-[1.64%] top-[38.85%] right-[9.34%] bottom-[38%] left-[89.01%] max-w-full overflow-hidden max-h-full"
-          alt=""
-          src="/vector.svg"
-        />
-      </nav>
+     <nav
+          className="absolute top-[0px] left-[0px] w-[1520px] h-28 overflow-hidden"
+          id="navbar"
+        >
+          <img
+            className="absolute top-[21px] left-[28px] w-20 h-[68.49px] object-cover"
+            alt=""
+            src="/image-3@2x.png"
+          />
+          <div className="absolute top-[40px] left-[115px] text-5xl font-kumbh-sans text-gray-200 text-left flex items-center w-[234px]">
+            HungerZero
+          </div>
+       <Link to={"/ngomaps"}> <div className="absolute top-[44px] left-[994px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+            Maps
+          </div></Link>  
+         <Link to={"/ngohome/feedback"}><div className="absolute text-seagreen-100  font-bold top-[44px] left-[1096px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+            Feedback
+          </div></Link> 
+         <Link to={"/contact"}> <div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+            Contact Us
+          </div></Link>
+       <Link to={"/ngohome"}> <img
+            className="absolute top-[30px] left-[1415px] w-[52px] h-[52px] object-cover"
+            alt=""
+            src="/ngoicon.svg"
+          /></Link>  
+        <Link to={"/ngohome"}> <div className="absolute top-[44px] left-[892px] text-mini font-poppins text-gray-200 text-left flex items-center w-[55px]">
+            Home
+          </div></Link> 
+       <Link to={"/notificationngo"}>  <img
+            className="absolute h-[23.15%] w-[1.64%] top-[38.85%] right-[9.34%] bottom-[38%] left-[89.01%] max-w-full overflow-hidden max-h-full"
+            alt=""
+            src="/vector.svg"
+          /></Link> 
+        </nav>
     </div>
   );
 };

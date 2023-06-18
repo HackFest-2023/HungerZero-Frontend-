@@ -51,9 +51,10 @@ const NotificationUser = () => {
         src="/alarm-clock@2x.png"
       />
         <div className="absolute top-[336px] left-[1257px] rounded-3xs bg-seagreen-100 w-[185px] h-[38px]" />
-      <b className="absolute top-[337px] left-[1283px] flex font-kumbh-sans text-whitesmoke-100 text-center items-center justify-center w-[134px] h-9">
+  <Link to={"/userhome/donations"}>  <b className="absolute top-[337px] left-[1283px] flex font-kumbh-sans text-whitesmoke-100 text-center items-center justify-center w-[134px] h-9">
         Donate Now
       </b>
+    </Link>  
       <div className="absolute top-[439px] left-[57px] rounded-3xs bg-white w-[1408px] h-[95px]" />
       <img
         className="absolute top-[462px] left-[86px] w-[50px] h-[50px] object-cover"
@@ -104,14 +105,14 @@ const NotificationUser = () => {
        <Link to={"/userhome/community"}> <div className="absolute top-[44px] left-[1096px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
           Community
         </div></Link>
-        <Link to={"/userhome/contact"}><div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+        <Link to={"/contact"}><div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
           Contact Us
         </div></Link>
-        <img
+        <Link to={"/userhome/userprofile"}  > <img
           className="absolute top-[30px] left-[1415px] w-[52px] h-[52px] object-cover"
           alt=""
           src="/ellipse1@2x.png"
-        />
+        /></Link> 
       <Link to={"/userhome"} ><div className="absolute top-[44px] left-[892px] text-mini font-poppins text-gray-200 text-left flex items-center w-[55px]">
           Home
         </div></Link> 

@@ -1,6 +1,7 @@
 import { TextField } from "@mui/material";
 import React,{ useState } from 'react';
 import {Link} from "react-router-dom";
+import axios from 'axios'
 
 const ContactUs = () => {
 
@@ -9,19 +10,36 @@ const ContactUs = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [mail, setMail]= useState()
   
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const emailBody = `${message}`;
-    const mailToLink = `mailto:hungerzero123@gmail.com?subject=New message from ${name}&body=${emailBody}`;
+    
 
-    window.open(mailToLink, '_blank');
+    axios.post('http://127.0.0.1:8000/user/contact_us/')
+      .then(response => {
+        setMail(response.data);
+        console.log(response.data)
+        alert("Email sent succesfully!")
+      })
+      .catch(error => {
+        console.error('Error mailing:', error);
+        alert("Email could not be sent!")
+      });
+    // const emailBody = `${message}`;
+    // const mailToLink = `mailto:hungerzero123@gmail.com?subject=New message from ${name}&body=${emailBody}`;
+
+    // window.open(mailToLink, '_blank');
   };
+
+  
   const openWhatsapp = () => {
     window.open("https://wa.me/9372022651", "_blank");
   }
+
+
   return (
     <div className="relative bg-whitesmoke-100 w-full h-[950px] overflow-hidden text-left text-45xl text-white font-poppins">
       <div className="absolute top-[249px] left-[77px] rounded-3xs bg-white w-[1361px] h-[650px]" />
@@ -107,7 +125,10 @@ const ContactUs = () => {
         <div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px] text-seagreen-100 font-bold">
           Contact Us
         </div>
-        <Link to={"/userprofile"} ><img
+        <Link to={"/userhome/reward"}><div className="absolute top-[44px] left-[770px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+          Rewards
+        </div></Link>
+        <Link to={"/userhome/userprofile"} ><img
           className="absolute top-[30px] left-[1415px] w-[52px] h-[52px] object-cover"
           alt=""
           src="/ellipse1@2x.png"
@@ -115,11 +136,11 @@ const ContactUs = () => {
     <Link to={"/userhome"} >   <div className="absolute top-[44px] left-[892px] text-mini font-poppins text-gray-200 text-left flex items-center w-[55px]">
           Home
         </div></Link>  
-        <img
+        <Link to={"/userhome/notificationuser"}> <img
           className="absolute h-[23.15%] w-[1.64%] top-[38.85%] right-[9.34%] bottom-[38%] left-[89.01%] max-w-full overflow-hidden max-h-full"
           alt=""
           src="/vector.svg"
-        />
+        /></Link> 
       </nav>
       <div style={{ position: "relative" }}>
     <iframe

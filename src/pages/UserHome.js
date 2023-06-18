@@ -76,21 +76,24 @@ const UserHome = () => {
         <div className="absolute top-[40px] left-[115px] text-5xl font-kumbh-sans text-gray-200 text-left flex items-center w-[234px]">
           HungerZero
         </div>
-      <Link to={"/userhome/usermap"}><button className='w-21 ml-[750px] mt-[45px] rounded-lg bg-seagreen-100 h-6 text-white'>See Nearby NGOs</button></Link>  
+      <Link to={"/userhome/usermap"}><button className='w-21 ml-[620px] mt-[45px] rounded-lg bg-seagreen-100 h-6 text-white'>See Nearby NGOs</button></Link>  
       <Link to={"/userhome/donations"}><div className="absolute top-[44px] left-[984px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
           Donation
         </div></Link>  
        <Link to={"/userhome/community"}> <div className="absolute top-[44px] left-[1096px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
           Community
         </div></Link>
-        <Link to={"/userhome/contact"}><div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+        <Link to={"/contact"}><div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
           Contact Us
         </div></Link>
-        <img
+        <Link to={"/userhome/reward"}><div className="absolute top-[44px] left-[770px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+          Rewards
+        </div></Link>
+    <Link to={"/userhome/userprofile"}  > <img
           className="absolute top-[30px] left-[1415px] w-[52px] h-[52px] object-cover"
           alt=""
           src="/ellipse1@2x.png"
-        />
+        /></Link>  
       <Link to={"/userhome"} ><div className="absolute top-[44px] text-seagreen-100 font-bold left-[892px] text-mini font-poppins text-gray-200 text-left flex items-center w-[55px]">
           Home
         </div></Link> 

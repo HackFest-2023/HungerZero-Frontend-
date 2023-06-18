@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 const NotificationNgo = () => {
     return (
       <div className="relative bg-whitesmoke-100 w-full h-[1144px] overflow-hidden text-left text-sm text-darkslateblue-100 font-poppins">
@@ -60,28 +62,28 @@ const NotificationNgo = () => {
           <div className="absolute top-[40px] left-[115px] text-5xl font-kumbh-sans text-gray-200 text-left flex items-center w-[234px]">
             HungerZero
           </div>
-          <div className="absolute top-[44px] left-[959px] text-mini font-poppins text-gray-200 text-center flex items-center justify-center w-[110px]">
+       <Link to={"/ngomaps"}> <div className="absolute top-[44px] left-[994px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
             Maps
-          </div>
-          <div className="absolute top-[44px] left-[1085px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+          </div></Link>  
+         <Link to={"/ngohome/feedback"}><div className="absolute top-[44px] left-[1096px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
             Feedback
-          </div>
-          <div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+          </div></Link> 
+         <Link to={"/contact"}> <div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
             Contact Us
-          </div>
-          <img
-            className="absolute top-[30px] left-[1416px] w-[50px] h-[50px] object-cover"
+          </div></Link>
+       <Link to={"/ngohome"}> <img
+            className="absolute top-[30px] left-[1415px] w-[52px] h-[52px] object-cover"
             alt=""
-            src="/ellipse1@2x.png"
-          />
-          <div className="absolute top-[44px] left-[892px] text-mini font-poppins text-gray-200 text-left flex items-center w-[55px]">
+            src="/ngoicon.svg"
+          /></Link>  
+        <Link to={"/ngohome"}> <div className="absolute top-[44px] left-[892px] text-mini font-poppins text-gray-200 text-left flex items-center w-[55px]">
             Home
-          </div>
-          <img
+          </div></Link> 
+       <Link to={"/notificationngo"}>  <img
             className="absolute h-[23.15%] w-[1.64%] top-[38.85%] right-[9.34%] bottom-[38%] left-[89.01%] max-w-full overflow-hidden max-h-full"
             alt=""
             src="/vector.svg"
-          />
+          /></Link> 
         </nav>
       </div>
     );

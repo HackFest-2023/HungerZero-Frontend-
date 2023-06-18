@@ -12,15 +12,20 @@ const Calender = () => {
 
     const events = [
         {
-          title: "The Title",
+          title: "Donation 2",
           start: "2023-04-09T08:00:00",
           end: "2023-04-09T09:00:00",
         },
         {
-         title: "Donation1",
+         title: "Donation 1",
           start: "2023-04-11T05:00:00",
           end: "2023-04-11T06:00:00",
-        }
+        },
+        {
+          title: "Donation 3",
+           start: "2023-04-15T05:00:00",
+           end: "2023-04-15T06:00:00",
+         }
       ];
 
   return (

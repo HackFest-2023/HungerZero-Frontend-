@@ -39,10 +39,13 @@ const Community = () => {
           <Link to={"/userhome/community"} > <b className="absolute top-[44px] left-[1096px] text-mini flex font-poppins text-seagreen-100 text-left items-center w-[110px]">
             Community
           </b></Link> 
-          <Link to={"/userhome/contact"} ><div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+          <Link to={"/userhome/reward"}><div className="absolute text-gray-200  top-[44px] left-[770px] text-mini font-poppins  text-left flex items-center w-[110px]">
+          Rewards
+        </div></Link>
+          <Link to={"/contact"} ><div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
             Contact Us
           </div></Link>
-         <Link to={"/userprofile"}><img
+         <Link to={"/userhome/userprofile"}><img
             className="absolute top-[30px] left-[1415px] w-[52px] h-[52px] object-cover"
             alt=""
             src="/ellipse1@2x.png"

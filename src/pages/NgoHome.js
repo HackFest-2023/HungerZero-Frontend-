@@ -99,22 +99,22 @@ const NgoHome = () => {
          <Link to={"/ngohome/feedback"}><div className="absolute top-[44px] left-[1096px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
             Feedback
           </div></Link> 
-          <div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
+         <Link to={"/contact"}> <div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
             Contact Us
-          </div>
+          </div></Link>
        <Link to={"/ngohome"}> <img
             className="absolute top-[30px] left-[1415px] w-[52px] h-[52px] object-cover"
             alt=""
             src="/ngoicon.svg"
           /></Link>  
-        <Link to={"/ngohome"}> <div className="absolute top-[44px] left-[892px] text-mini font-poppins text-gray-200 text-left flex items-center w-[55px]">
+        <Link to={"/ngohome"}> <div className="absolute text-seagreen-100 font-bold  top-[44px] left-[892px] text-mini font-poppins text-left flex items-center w-[55px]">
             Home
           </div></Link> 
-          <img
+       <Link to={"/notificationngo"}>  <img
             className="absolute h-[23.15%] w-[1.64%] top-[38.85%] right-[9.34%] bottom-[38%] left-[89.01%] max-w-full overflow-hidden max-h-full"
             alt=""
             src="/vector.svg"
-          />
+          /></Link> 
         </nav>
     
     
