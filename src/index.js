@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider, theme } from '@chakra-ui/react'
 import { BrowserRouter } from "react-router-dom";
 import "./global.css";
+import "./pages/i18n";
 
 const container = document.getElementById("root");
 const root = createRoot(container);

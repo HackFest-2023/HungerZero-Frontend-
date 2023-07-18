@@ -1,7 +1,8 @@
 import { TextField } from "@mui/material";
 import { Link } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useTranslation } from "react-i18next";
 
 const Donations = () => {
 
@@ -13,7 +14,10 @@ const Donations = () => {
   const [ngo, setNGO] = useState('');
   const [chapatis, setChapatis] = useState('');
   const [data, setData]= useState('');
-
+  const { t, i18n } = useTranslation();
+    useEffect(() => {
+      i18n.changeLanguage("en");
+    }, []);
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -65,14 +69,14 @@ const Donations = () => {
         src="/ellipse8@2x.png"
       />
       <b className="absolute top-[528px] left-[112px] flex items-center w-[444px]">
-        Enter Quantity of donated food
+        {t("Enter Quantity of donated food")}
       </b>
       <b className="absolute top-[189px] left-[57px] text-45xl flex font-playfair-display text-seagreen-100 items-center w-[508px] h-[89px]" style={{fontSize: "50px"}}>
-        Donate Now
+      { t("Donate Now") }
       </b>
       <div className="absolute top-[1104px] left-[112px] rounded-lg bg-gold-100 w-[687px] h-[53px] overflow-hidden text-center text-lg text-gray-200 font-dm-sans">
   <label htmlFor="uploadImage" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 leading-[24px] font-medium cursor-pointer">
-    Upload Image
+    
   </label>
   <input
     id="uploadImage"
@@ -111,7 +115,7 @@ const Donations = () => {
       <form onSubmit={handleSubmit}>
       <button type="submit" className="absolute top-[1232px] left-[113px] rounded-xl bg-seagreen-100 w-[686px] h-[50px] flex font-kumbh-sans text-whitesmoke-100 text-center items-center justify-center w-[691px] h-[18px]" >
 
-        Submit
+      { t("Submit") }
       </button>
 
       <TextField
@@ -202,19 +206,19 @@ const Donations = () => {
           src="/image-3@2x.png"
         />
         <div className="absolute top-[40px] left-[115px] text-5xl font-kumbh-sans text-gray-200 text-left flex items-center w-[234px]">
-          HungerZero
+        { t("Hunger Zero") }
         </div>
       <Link to={"/userhome/donations"}><b className="absolute top-[44px] left-[984px] text-mini flex font-poppins text-seagreen-100 text-left items-center w-[110px]">
-          Donation
+      { t("Donations") }
         </b></Link>  
         <Link to={"/userhome/reward"}><div className="absolute text-gray-200 p-[44px] left-[770px] text-mini font-poppins  text-left flex items-center w-[110px]">
-          Rewards
+        { t("Rewards") }
         </div></Link>
      <Link to={"/userhome/community"}><div className="absolute top-[44px] left-[1096px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
-          Community
+     { t("Community") }
         </div></Link>   
        <Link to={"/contact"}><div className="absolute top-[44px] left-[1210px] text-mini font-poppins text-gray-200 text-left flex items-center w-[110px]">
-          Contact Us
+       { t("Contact Us") }
         </div></Link> 
        <Link to={"/userhome/userprofile"} ><img
           className="absolute top-[30px] left-[1415px] w-[52px] h-[52px] object-cover"
@@ -222,7 +226,7 @@ const Donations = () => {
           src="/ellipse1@2x.png"
         /></Link>
        <Link to={"/userhome"}><div className="absolute top-[44px] left-[892px] text-mini font-poppins text-gray-200 text-left flex items-center w-[55px]">
-          Home
+       { t("Home") }
         </div></Link> 
       <Link to={"/userhome/notificationuser"}> <img
           className="absolute h-[23.15%] w-[1.64%] top-[38.85%] right-[9.34%] bottom-[38%] left-[89.01%] max-w-full overflow-hidden max-h-full"
@@ -230,6 +234,15 @@ const Donations = () => {
           src="/vector.svg"
         /></Link> 
       </nav>
+      
+      {
+      i18n.language === "en" ? (
+    <button className="bg-orange-200 px-5 rounded-lg" onClick={() => i18n.changeLanguage("hi")}>Hindi</button>
+      ) : (
+        <button className="bg-orange-200 px-5 rounded-lg" onClick={() => i18n.changeLanguage("en")}>English</button>
+      )
+    }
+    
     </div>
   );
 };

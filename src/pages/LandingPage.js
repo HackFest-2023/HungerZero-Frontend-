@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 const LandingPage = () => {
+  const { t, i18n } = useTranslation();
+    useEffect(() => {
+      i18n.changeLanguage("en");
+    }, []);
   return (
     <div className="relative bg-whitesmoke-100 w-full h-[2648px] overflow-hidden text-left text-lg text-gray-200 font-poppins">
       <div className="absolute top-[2256px] left-[0px] bg-darkslateblue-100 w-[1520px] h-[392px]" />
@@ -57,7 +63,13 @@ const LandingPage = () => {
      Are you a donor?
  </button></Link>  
       <button className="absolute top-[29px] left-[1069px] z-10 rounded-3xs bg-seagreen-100 shadow-[0px_0px_8px_2px_rgba(6,_144,_111,_0.5)] w-[165px] h-[52px] hover:cursor-pointer text-base flex font-kumbh-sans font-bold text-whitesmoke-100 text-center items-center justify-center w-[167px]">
-  Donate Now
+      {
+      i18n.language === "en" ? (
+    <button className="bg-orange-200 px-5 rounded-lg" onClick={() => i18n.changeLanguage("hi")}>Hindi</button>
+      ) : (
+        <button className="bg-orange-200 px-5 rounded-lg" onClick={() => i18n.changeLanguage("en")}>English</button>
+      )
+    }
 </button>
 
 <Link to={"/ngoregister"}><button className="absolute top-[586px] left-[374px] z-10 rounded-3xs font-bold box-border w-[225px] h-[52px] border-[2px] border-solid border-seagreen-100 text-base flex font-kumbh-sans text-seagreen-100 text-center items-center justify-center w-[229px] hover:cursor-pointer bg-transparent">
@@ -699,6 +711,7 @@ const LandingPage = () => {
           RISE - Against Hunger
         </div>
       </div>
+      
     </div>
   );
 };

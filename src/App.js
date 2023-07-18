@@ -29,6 +29,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { LoginContext } from "./Contexts/LoginContext";
 import Nutrition from "./pages/Nutrition";
+import Translate from "./pages/translate";
 
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
     <LoginContext.Provider value={{setUsername, username, logged, setLogged}}>
     <Routes>
       <Route path="/" element={<LandingPage />} />
+      <Route path="/translate" element={< Translate/>} />
 
       <Route path={'/userregister'} element={<UserRegister/>}/>
       <Route path={'/userlogin'} element={<UserLogin/>}/>

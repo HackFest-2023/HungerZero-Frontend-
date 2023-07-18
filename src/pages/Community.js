@@ -1,17 +1,37 @@
 import React, { useState,useRef }  from 'react';
 import { Link } from 'react-router-dom';
-const Community = () => {
-   
-    const fileInputRef = useRef(null);
+import axios from 'axios';
 
-  const handleButtonClick = () => {
-    fileInputRef.current.click();
+
+const Community = () => {
+  const fileInputRef = useRef(null);
+  const [donationText, setDonationText] = useState('');
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleInputChange = (e) => {
+    setDonationText(e.target.value);
   };
 
-  const handleFileSelect = (event) => {
-    const file = event.target.files[0];
-    // TODO: Handle the selected file
-    console.log('Selected file:', file);
+  const handleFileSelect = (e) => {
+    setSelectedImage(e.target.files[0]);
+  };
+
+  const handlePost = () => {
+    const formData = new FormData();
+    formData.append('donationText', donationText);
+    if (selectedImage) {
+      formData.append('image', selectedImage);
+    }
+
+    axios.post('https://127.0.0.1:8000/user/communities', formData)
+      .then((response) => {
+        // Handle successful post response
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error(error);
+      });
   };
 
     return (
@@ -80,40 +100,46 @@ const Community = () => {
           alt=""
           src="/ellipse@2x.png"
         />
-<input
-  type="text"
-  className="absolute top-[337px] left-[126px] pl-5 rounded-xl bg-lightcyan w-[811px] h-[46px] focus:outline-none"
-  placeholder="Where did you donate today?"
-/>
-
-        
-      <div>
-      <img
-        className="absolute top-[413px] left-[131px] w-5 h-5 overflow-hidden cursor-pointer"
-        alt=""
-        src="/image.svg"
-        onClick={handleButtonClick}
-      /><div style={{ 
-        position: 'relative', 
-        left: '160px', 
-        top: '410px', 
-        color: '#212121', 
-        fontSize: '16px' 
-      }}>Upload Image</div>
-      
+<div>
       <input
-        type="file"
-        accept="image/*"
-        ref={fileInputRef}
-        onChange={handleFileSelect}
-        style={{ display: 'none' }}
+        type="text"
+        className="absolute top-[337px] left-[126px] pl-5 rounded-xl bg-lightcyan w-[811px] h-[46px] focus:outline-none"
+        placeholder="Where did you donate today?"
+        value={donationText}
+        onChange={handleInputChange}
       />
+
+      <div>
+        <img
+          className="absolute top-[413px] left-[131px] w-5 h-5 overflow-hidden cursor-pointer"
+          alt=""
+          src="/image.svg"
+          onClick={() => fileInputRef.current.click()}
+        />
+        <div style={{
+          position: 'relative',
+          left: '160px',
+          top: '410px',
+          color: '#212121',
+          fontSize: '16px'
+        }}>Upload Image</div>
+
+        <input
+          type="file"
+          accept="image/*"
+          ref={fileInputRef}
+          onChange={handleFileSelect}
+          style={{ display: 'none' }}
+        />
+      </div>
+
+      <button
+        className="absolute top-[405px] left-[796px] z-10 font-bold hover:cursor-pointer rounded-xl bg-seagreen-100 w-40 h-[35px] text-base flex font-kumbh-sans text-whitesmoke-100 text-center items-center justify-center w-[162px] h-[13px]"
+        onClick={handlePost}
+      >
+        Post
+      </button>
     </div>
-        
-        <button className="absolute top-[405px] left-[796px] z-10 font-bold hover:cursor-pointer rounded-xl bg-seagreen-100 w-40 h-[35px] text-base flex font-kumbh-sans text-whitesmoke-100 text-center items-center justify-center w-[162px] h-[13px]" >
-    
-          Post
-    </button>
         <div className="absolute top-[316px] left-[1019px] rounded-3xs bg-white w-[461px] h-[1036px]" />
         <div className="absolute top-[489px] left-[54px] rounded-3xs bg-white w-[925px] h-[632px]" />
         <img
