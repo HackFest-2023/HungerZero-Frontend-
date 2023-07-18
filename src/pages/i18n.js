@@ -30,7 +30,13 @@ const resources = {
         "Upload Image":"तस्विर अपलोड करना",
         "Donate Now":"अभी दान कीजिए",
         "Enter Quantity of donated food":"दान किए गए भोजन की मात्रा दर्ज करें",
-        
+        "Your Name": "आपका नाम",
+        "Number of Chapattis": "चपाती की संख्या",
+        "Quantity (kg) of Rice": "चावल की मात्रा (किग्रा)",
+        "Quantity (kg) of Sabzi": "सब्जी की मात्रा (किग्रा)" ,
+        "Quantity (kg) of Dal": "दाल की मात्रा (किग्रा)",
+        "Name of NGO": "NGO नाम",       
+        "Number of plates of food other than one mentioned above": "ऊपर उल्लिखित एक के अलावा भोजन की प्लेटों की संख्या", 
     },
   },
 

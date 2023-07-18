@@ -76,7 +76,7 @@ const Donations = () => {
       </b>
       <div className="absolute top-[1104px] left-[112px] rounded-lg bg-gold-100 w-[687px] h-[53px] overflow-hidden text-center text-lg text-gray-200 font-dm-sans">
   <label htmlFor="uploadImage" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 leading-[24px] font-medium cursor-pointer">
-    
+    Upload Image
   </label>
   <input
     id="uploadImage"
@@ -124,7 +124,7 @@ const Donations = () => {
         color="success"
         variant="outlined"
         type="text"
-        label="Name of NGO"
+        label={t("Name of NGO")}
         size="medium"
         margin="none"
         value={ngo} onChange={(event) => setNGO(event.target.value)} 
@@ -135,7 +135,7 @@ const Donations = () => {
         color="success"
         variant="outlined"
         type="text"
-        label="Your Name"
+        label={t("Your Name")}
         size="medium"
         margin="none"
         value={user} onChange={(event) => setUser(event.target.value)} 
@@ -146,7 +146,7 @@ const Donations = () => {
         color="success"
         variant="outlined"
         type="number"
-        label="Number of Chapattis"
+        label={t("Number of Chapattis")}
         size="medium"
         margin="none"
         value={chapatis} onChange={(event) => setChapatis(event.target.value)}
@@ -157,7 +157,7 @@ const Donations = () => {
         color="success"
         variant="outlined"
         type="number"
-        label="Quantity (kg) of Sabzi"
+        label={t("Quantity (kg) of Sabzi")}
         size="medium"
         margin="none"
         value={cookedFood} onChange={(event) => setCookedFood(event.target.value)}
@@ -168,7 +168,7 @@ const Donations = () => {
         color="success"
         variant="outlined"
         type="number"
-        label="Quantity (kg) of Rice"
+        label={t("Quantity (kg) of Rice")}
         size="medium"
         margin="none"
         value={grains} onChange={(event) => setGrains(event.target.value)}
@@ -179,7 +179,7 @@ const Donations = () => {
         color="success"
         variant="outlined"
         type="number"
-        label="Quantity (kg) of Dal"
+        label= { t("Quantity (kg) of Dal") }
         size="medium"
         margin="none"
         value={dal} onChange={(event) => setDal(event.target.value)}
@@ -190,7 +190,7 @@ const Donations = () => {
         color="success"
         variant="outlined"
         type="text"
-        label="Number of plates of food another than one mentioned above"
+        label={t("Number of plates of food other than one mentioned above")}
         size="medium"
         margin="none"
       />
@@ -206,7 +206,7 @@ const Donations = () => {
           src="/image-3@2x.png"
         />
         <div className="absolute top-[40px] left-[115px] text-5xl font-kumbh-sans text-gray-200 text-left flex items-center w-[234px]">
-        { t("Hunger Zero") }
+        Hunger Zero
         </div>
       <Link to={"/userhome/donations"}><b className="absolute top-[44px] left-[984px] text-mini flex font-poppins text-seagreen-100 text-left items-center w-[110px]">
       { t("Donations") }
@@ -237,9 +237,9 @@ const Donations = () => {
       
       {
       i18n.language === "en" ? (
-    <button className="bg-orange-200 px-5 rounded-lg" onClick={() => i18n.changeLanguage("hi")}>Hindi</button>
+    <button className="absolute top-[150px] left-[1050px] rounded-3xs bg-seagreen-100 w-[258px] h-[40px] text-whitesmoke-100 font-bold" onClick={() => i18n.changeLanguage("hi")}>Hindi</button>
       ) : (
-        <button className="bg-orange-200 px-5 rounded-lg" onClick={() => i18n.changeLanguage("en")}>English</button>
+        <button className="absolute top-[150px] left-[1050px] rounded-3xs bg-seagreen-100 w-[258px] h-[40px] text-whitesmoke-100 font-bold" onClick={() => i18n.changeLanguage("en")}>English</button>
       )
     }
     

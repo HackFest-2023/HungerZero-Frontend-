@@ -85,7 +85,7 @@ function App() {
       <Route path={'/ngoregister'} element={<NgoRegister/>}/>
       <Route path={'/ngologin'} element={<NgoLogin/>}/>
       <Route path={'/analysis'} element={<Analysis />}/>
-      <Route element={<PrivateRoute isLoggedIn={logged}/>}>
+      {/* <Route element={<PrivateRoute isLoggedIn={logged}/>}> */}
       <Route path={'/userhome'} element={<UserHome/>}/>
       <Route path={'/userhome/usermap'} element={<UserMap />}/>
         
@@ -100,7 +100,7 @@ function App() {
       
         <Route path="/userhome/notificationuser" element={<NotificationUser/>} />
         
-        </Route>
+        {/* </Route> */}
 <Route path={'/ngohome'} element={<NgoHome/>}/>
         <Route path={'/ngomaps'} element={<NgoMaps/>}/>
         <Route path="/notificationngo" element={<NotificationNgo/>} />
